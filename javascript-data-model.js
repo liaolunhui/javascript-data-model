@@ -24,7 +24,6 @@ function baseM(arr,socketCurdEvent,emitSocketCurd,middleWare){
     this.socketCurdScope=[];
     this.filter();
     this.currentPage=1;
-    this._enablePage=true;
     this.middleWare=middleWare;
     this.applyMiddleWare();
 
