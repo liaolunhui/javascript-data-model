@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue demo for javascript-data-model.js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="myApp">
+
+    <div class="topBtnWrap">
+        <button v-on:click="add()">add</button>　　<button v-on:click="filter()">filter type=='init'</button>　　<button v-on:click="cancelFilter()">show all</button>
+    </div>
+    <table v-show="list.length>0">
+        <tr>
+            <th>id</th>
+            <th>type</th>
+            <th>time</th>
+            <th>update</th>
+            <th>delete</th>
+        </tr>
+        <tr v-for="item in list">
+            <td>{{item.id}}</td>
+            <td>{{item.type}}</td>
+            <td>{{item.time}}</td>
+            <td><button v-on:click="update(item)">update</button></td>
+            <td><button v-on:click="remove(item)">delete</button></td>
+        </tr>
+
+    </table>
+
+    <div v-show="list.length==0">noting to show</div>
+
+</div>
+</body>
+<script src="http://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
+<script src="../javascript-data-model.js"></script>
+<script>
+    function getNowTime(){
+        var time=new Date().getTime();
+        return time;
+    }
+    var time=getNowTime();
+    var data=[{id:1,time:time+1,type:"init"},{id:2,time:time+2,type:"init"},{id:3,time:time+3,type:"init"}];
+    dataModel=M(data);
+
+    var vm=new Vue({
+        el: '#myApp',
+        data: {
+            list:dataModel.current
+        }
+    })
+
+
+
+    var nextId=data.length+1;
+
+    vm.add=function(){
+        dataModel.add({id:nextId,time:time,type:"new"});
+        nextId++;
+    }
+
+    vm.remove=function(item){
+        dataModel.remove({id:item.id});
+    }
+
+    vm.update=function(item){
+        dataModel.update({time:getNowTime()},{id:item.id});
+    }
+
+
+    vm.filter=function(){
+        dataModel.filter({type:"init"});
+    }
+
+
+    vm.cancelFilter=function(){
+        dataModel.filter({});
+    }
+    
+</script>
+</html>
