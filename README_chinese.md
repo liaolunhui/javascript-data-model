@@ -1,5 +1,5 @@
 # javascript-data-model
-一个MVVM（Angular,Vue等）的数据模型，让你可以像服务器端ORM一样增删改查数据，筛选数据，分页数据等。
+一个可以在前端轻松对DOM数据操作(基于MVVM，Angular/Vue)，包括增删改查，分页，过滤等，用于更方便实现无刷新更新DOM。希望能为大家节省一点时间。
 ## Demo
 
 ### Angular 样板实例
