@@ -1,4 +1,4 @@
-## [中文文档](README_chinese.md)
+## [中文文档](README_chinese.md)   QQ交流群：210661226
 
 # javascript-data-model
 An easier way to update DOM (Base on MVVM , Angular/Vue).You can add,delete,update,find,filter,paging data.It will render to Dom without refreshing. Hope saving your time.
@@ -25,7 +25,7 @@ Import `javascript-data-model.js` in your project;
 <script src="../javascript-data-model.js"></script>
 ```
 
-Generate your data model with an Array that contain objects;
+use `M(array)` to generate your data model instance with an Array that contain objects;
 ``` js
 var data=[{id:1,time:1479049721429,type:"init"},{id:2,time:1479049722163,type:"init"},{id:3,time:1479049722594,type:"init"}];
 var dataModel=M(data);

@@ -1,5 +1,7 @@
 # javascript-data-model
 一个可以在前端轻松对DOM数据操作(基于MVVM，Angular/Vue)，包括增删改查，分页，过滤等，用于更方便实现无刷新更新DOM。希望能为大家节省一点时间。
+## QQ交流群：210661226
+
 ## Demo
 
 ### Angular 样板实例
@@ -22,7 +24,7 @@
 <script src="../javascript-data-model.js"></script>
 ```
 
-使用数据（一个数组包含多个对象）创建一个数据模型实例。
+使用`M(array)`传入数据（一个数组包含多个对象）创建一个数据模型实例。
 ``` js
 var data=[{id:1,time:1479049721429,type:"init"},{id:2,time:1479049722163,type:"init"},{id:3,time:1479049722594,type:"init"}];
 var dataModel=M(data);
