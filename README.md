@@ -66,7 +66,7 @@ dataModel.delete({id:2,type:'new'},true)
 
 ### update(updateTo,condition,orCondition)
 update object that match `condition`
-`updateTo` specify what property do you want to update to;
+`updateTo` specify what property do you want to update to,support multi property;
 ``` js
 dataModel.update({type:'wiki'})
 //update all data's `type` property to `wiki`
