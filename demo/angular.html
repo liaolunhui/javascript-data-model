@@ -11,7 +11,7 @@
     <div class="topBtnWrap">
     <button ng-click="add()">add</button>　　<button ng-click="filter()">filter type=='init'</button>　　<button ng-click="cancelFilter()">show all</button>
     </div>
-    <table>
+    <table ng-show="list.length>0">
         <tr>
             <th>id</th>
             <th>type</th>
@@ -26,6 +26,7 @@
             <td><button ng-click="update(item)">update</button></td>
             <td><button ng-click="remove(item)">delete</button></td>
         </tr>
+
     </table>
 
     <div ng-show="list.length==0">noting to show</div>
