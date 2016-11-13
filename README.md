@@ -1,4 +1,4 @@
-[中文文档](README_chinese.md)
+## [中文文档](README_chinese.md)
 
 # javascript-data-model
 A javascript data model for mvvm ( Angular , Vue and so on). You can handle data like server side ,including add,delete,update,find,filter,paging and so on.
