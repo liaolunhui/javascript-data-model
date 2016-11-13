@@ -1,7 +1,7 @@
 ## [中文文档](README_chinese.md)
 
 # javascript-data-model
-A javascript data model for mvvm ( Angular , Vue and so on). You can handle data like server side ,including add,delete,update,find,filter,paging and so on.
+An easier way to update DOM (Base on MVVM , Angular/Vue).You can add,delete,update,find,filter,paging data.It will render to Dom without refreshing. Hope saving your time.
 
 ## Demo
 
