@@ -73,6 +73,8 @@ dataModel.update({type:'wiki'})
 ```
 
 `condition` similar to `delete` method
+
+
 `orCondition` similar to `delete` method
 
 ### find/select(condition,orCondition,onlyCurrent,onlyOne)
