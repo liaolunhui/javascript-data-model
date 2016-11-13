@@ -74,8 +74,10 @@ dataModel.update({type:'wiki'})
 //更新所有数据中的`type`熟悉为`wiki`值
 ```
 
-`condition` 与 `delete` 方法的`condition`类似
-`orCondition` 与 `delete` 方法的`orCondition`类似
+- **condition**
+ 与 `delete` 方法的`condition`类似
+- **orCondition**
+ 与 `delete` 方法的`orCondition`类似
 
 ### find/select(condition,orCondition,onlyCurrent,onlyOne)
 查找满足条件的数据，返回一个数组。
