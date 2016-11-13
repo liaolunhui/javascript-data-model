@@ -37,8 +37,9 @@ baseM.prototype.applyMiddleWare=function(arr){
 }
 
 
-baseM.prototype.enablePage=function(){
+baseM.prototype.enablePage=function(quantityPerPage){
     this._enablePage=true;
+    this.quantityPerPage=quantityPerPage||this.quantityPerPage||10;
     return this.filter(this.condition);
 }
 
@@ -221,7 +222,7 @@ matchObj=baseM.prototype.match=function(row,condition,orCondition){
 
 
 
-baseM.prototype.remove=function(condition,orCondition){
+baseM.prototype.remove=baseM.prototype.delete=function(condition,orCondition){
 
     for(var i=0;i<this.all.length;i++){
         var row=this.all[i];
@@ -292,7 +293,7 @@ baseM.prototype.filter=function(condition,orCondition,onlyCurrent){
 }
 
 
-baseM.prototype.find=function(condition,orCondition,onlyCurrent,onlyOne){
+baseM.prototype.find=baseM.prototype.select=function(condition,orCondition,onlyCurrent,onlyOne){
 
     var dataToFilter=onlyCurrent?this.current:this.all;
     var filterResult=[];
