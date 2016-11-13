@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular demo for javascript-data-model.js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    <div class="topBtnWrap">
+    <button ng-click="add()">add</button>　　<button ng-click="filter()">filter type=='init'</button>　　<button ng-click="cancelFilter()">show all</button>
+    </div>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>type</th>
+            <th>time</th>
+            <th>update</th>
+            <th>delete</th>
+        </tr>
+        <tr ng-repeat="item in list">
+            <td>{{item.id}}</td>
+            <td>{{item.type}}</td>
+            <td>{{item.time}}</td>
+            <td><button ng-click="update(item)">update</button></td>
+            <td><button ng-click="remove(item)">delete</button></td>
+        </tr>
+    </table>
+
+    <div ng-show="list.length==0">noting to show</div>
+
+</div>
+</body>
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script src="../javascript-data-model.js"></script>
+<script>
+    function getNowTime(){
+        var time=new Date().getTime();
+        return time;
+    }
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        var time=getNowTime();
+
+        var data=[{id:1,time:time+1,type:"init"},{id:2,time:time+2,type:"init"},{id:3,time:time+3,type:"init"}];
+        dataModel=M(data);
+        $scope.list=dataModel.current;
+
+        var nextId=data.length+1;
+
+        $scope.add=function(){
+            dataModel.add({id:nextId,time:time,type:"new"});
+            nextId++;
+        }
+
+        $scope.remove=function(item){
+            dataModel.remove({id:item.id});
+        }
+
+        $scope.update=function(item){
+            dataModel.update({time:getNowTime()},{id:item.id});
+        }
+
+
+        $scope.filter=function(){
+            dataModel.filter({type:"init"});
+        }
+
+
+        $scope.cancelFilter=function(){
+            dataModel.filter({});
+        }
+    });
+
+</script>
+</html>

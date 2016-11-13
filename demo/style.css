@@ -1,0 +1,18 @@
+*{}
+
+body {
+    margin: 20px;
+}
+
+.topBtnWrap {
+    margin: 20px;
+    width: 300px;
+}
+table{ 
+border-collapse:collapse; 
+} 
+td,th {
+    padding: 1em;
+    border: 1px solid gray;
+    border-style: dotted;
+}
