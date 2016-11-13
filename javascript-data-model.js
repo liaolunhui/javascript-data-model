@@ -39,10 +39,12 @@ baseM.prototype.applyMiddleWare=function(arr){
 
 baseM.prototype.enablePage=function(){
     this._enablePage=true;
+    return this.filter(this.condition);
 }
 
 baseM.prototype.disablePage=function(){
     this._enablePage=false;
+    return this.filter(this.condition);
 }
 
 baseM.prototype.pageApply=function(){
@@ -86,11 +88,16 @@ baseM.prototype.limit=function(start,quantity){
         Array.prototype.push.apply(this.current,result);
 
     }
-
-    return this;
+    return this.filter(this.condition);
 }
 
 baseM.prototype.applyAllScope=function(){
+    //Vue trigger update view
+    var ob=this.current.__ob__;
+    if(ob){
+       ob.dep&&ob.dep.notify&&ob.dep.notify()
+    }
+
     var $scopes=this.socketCurdScope;
     for(var i=0;i<$scopes.length;i++){
         var $scope=$scopes[i];
@@ -124,6 +131,7 @@ baseM.prototype.attach=function(options){
         if(!target.attach)target.attach=[item]
         else target.attach.push(item);
     })
+    return this.filter(this.condition);
 }
 
 baseM.prototype.add=function(data,method){
@@ -168,7 +176,6 @@ baseM.prototype.applySocketEvent=function(method,args){
             argsArr.splice(0,0,eventName);
             socket.emit.apply(socket,argsArr);
         }
-        this.applyAllScope()
     }
 
     return this;
@@ -226,8 +233,7 @@ baseM.prototype.remove=function(condition,orCondition){
         }
 
     }
-    this.filter(this.condition);
-    return this.all;
+    return this.filter(this.condition);
 }
 
 baseM.prototype.reset=function(arr){
@@ -255,7 +261,7 @@ baseM.prototype.update=function(updateTo,condition,orCondition){
     }
 
     this.updateAllGrid();
-    return this;
+    return this.filter(this.condition);
 
 }
 
@@ -281,7 +287,8 @@ baseM.prototype.filter=function(condition,orCondition,onlyCurrent){
     Array.prototype.push.apply(this.current,filterResult);
 
     this.filterResult=filterResult;
-    return this.filterResult;
+    this.applyAllScope();
+    return this;
 }
 
 
