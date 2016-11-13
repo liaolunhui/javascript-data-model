@@ -1,5 +1,8 @@
+[中文文档](README_chinese.md)
+
 # javascript-data-model
-一个MVVM（Angular,Vue等）的数据模型，让你可以像服务器端ORM一样增删改查数据，筛选数据，分页数据等。
+A javascript data model for mvvm ( Angular , Vue and so on). You can handle data like server side ,including add,delete,update,find,filter,paging and so on.
+
 ## Demo
 
 ### Angular demo
