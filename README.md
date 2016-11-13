@@ -53,12 +53,12 @@ dataModel.add({id:4,time:1479050063675,type:'new'})
 
 ### delete(condition,orCondition)
 delete objects from data model
-`condition` should be an object that specify what do you want to delete. if condition are not specified,it will delete all data.
+- **condition** should be an object that specify what do you want to delete. if condition are not specified,it will delete all data.
 ``` js
 dataModel.delete({type:'init'})
 //it will delete all data that `type` property is `init`
 ```
-`orCondition` shoud be an Bool that specify logic `AND` or `OR`,default `AND`
+- **orCondition** shoud be an Bool that specify logic `AND` or `OR`,default `AND`
 ``` js
 dataModel.delete({id:2,type:'new'},true)
 //it will delete all data that `type` property is `init` or `id` is `2`
@@ -66,23 +66,23 @@ dataModel.delete({id:2,type:'new'},true)
 
 ### update(updateTo,condition,orCondition)
 update object that match `condition`
-`updateTo` specify what property do you want to update to,support multi property;
+- **updateTo** specify what property do you want to update to,support multi property;
 ``` js
 dataModel.update({type:'wiki'})
 //update all data's `type` property to `wiki`
 ```
 
-`condition` similar to `delete` method
+- **condition** similar to `delete` method
 
 
-`orCondition` similar to `delete` method
+- **orCondition** similar to `delete` method
 
 ### find/select(condition,orCondition,onlyCurrent,onlyOne)
 find data match `condition`,return an array;
-`condition` similar to `delete` method;
-`orCondition` similar to `delete` method
-`onlyCurrent` Bool value specify if find from `current` data only. defalut `false`
-`onlyOne` Bool value specify if find One only;
+- **condition** similar to `delete` method;
+- **orCondition** similar to `delete` method
+- **onlyCurrent** Bool value specify if find from `current` data only. defalut `false`
+- **onlyOne** Bool value specify if find One only;
 ``` js
 var matchData=dataModel.select({type:'init'})
 //return data that's `type` property is `init`
