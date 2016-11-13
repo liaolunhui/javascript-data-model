@@ -54,7 +54,7 @@ dataModel.add({id:4,time:1479050063675,type:'new'})
 
 ### delete(condition,orCondition)
 从数据模型中删除数据
-- **condition` 一个`对象`类型的条件，指定想要删除的数据。如果不指定条件，将删除全部数据。
+- **condition** 一个`对象`类型的条件，指定想要删除的数据。如果不指定条件，将删除全部数据。
 ``` js
 dataModel.delete({type:'init'})
 //删除所有`type`熟悉为`init`的数据
