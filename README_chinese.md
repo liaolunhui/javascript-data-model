@@ -54,7 +54,7 @@ dataModel.add({id:4,time:1479050063675,type:'new'})
 
 ### delete(condition,orCondition)
 从数据模型中删除数据
-`condition` 一个`对象`类型的条件，指定想要删除的数据。如果不指定条件，将删除全部数据。
+- **condition` 一个`对象`类型的条件，指定想要删除的数据。如果不指定条件，将删除全部数据。
 ``` js
 dataModel.delete({type:'init'})
 //删除所有`type`熟悉为`init`的数据
@@ -67,7 +67,7 @@ dataModel.delete({id:2,type:'new'},true)
 
 ### update(updateTo,condition,orCondition)
 更新满足`condition`条件的数据
-`updateTo` 指定你想更新数据的哪些属性为什么值,可以更新多个属性;
+- **updateTo** 指定你想更新数据的哪些属性为什么值,可以更新多个属性;
 ``` js
 dataModel.update({type:'wiki'})
 //update all data's `type` property to `wiki`
@@ -81,10 +81,10 @@ dataModel.update({type:'wiki'})
 
 ### find/select(condition,orCondition,onlyCurrent,onlyOne)
 查找满足条件的数据，返回一个数组。
-`condition` 与 `delete` 方法的`condition`类似
-`orCondition` 与 `delete` 方法的`orCondition`类似
-`onlyCurrent` `Bool` 值指定是否从`current`中查找（从结果中查找），默认`false`（从`all`中查找）
-`onlyOne` `Bool` 值指定是否之查出第一条;
+- **condition** 与 `delete` 方法的`condition`类似
+- **orCondition** 与 `delete` 方法的`orCondition`类似
+- **onlyCurrent** `Bool` 值指定是否从`current`中查找（从结果中查找），默认`false`（从`all`中查找）
+- **onlyOne** `Bool` 值指定是否之查出第一条;
 ``` js
 var matchData=dataModel.select({type:'init'})
 //返回所有`type`属性为`init`的数据（数组类型）
@@ -103,7 +103,7 @@ find data that match `condition` from `all` property,and put it to `current` pro
 
 ### enablePage(quantityPerPage)
 开启分页
-`quantityPerPage` 每页显示多少条数据，默认10条。;
+- **quantityPerPage** 每页显示多少条数据，默认10条。;
 
 ### nextPage
 下一页
