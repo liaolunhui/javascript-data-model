@@ -3,8 +3,19 @@ A javascript data model for mvvm ( Angular , Vue and so on). You can handle data
 
 ## Demo
 
-[Angular demo](https://liaolunhui.github.io/javascript-data-model/demo/angular.html)
-[Vue demo](https://liaolunhui.github.io/javascript-data-model/demo/vue.html)
+### Angular demo
+
+[Host on China Server](http://liaolunhui.hhappkf.com/javascript-data-model/demo/angular.html)
+
+[Host on github.io](https://liaolunhui.github.io/javascript-data-model/demo/angular.html)
+
+### Vue demo
+
+[Host on China Server](http://liaolunhui.hhappkf.com/javascript-data-model/demo/vue.html)
+
+[Host on github.io](https://liaolunhui.github.io/javascript-data-model/demo/vue.html)
+
+(https://liaolunhui.github.io/javascript-data-model/demo/vue.html)
 
 ## Getting Start
 Import `javascript-data-model.js` in your project;
