@@ -1,4 +1,4 @@
-## [中文文档](README_chinese.md)   QQ交流群：210661226
+## [中文文档](README_chinese.md)
 
 # javascript-data-model
 An easier way to update DOM (Base on MVVM , Angular/Vue).You can add,delete,update,find,filter,paging data.It will render to Dom without refreshing. Hope saving your time.
@@ -108,3 +108,5 @@ go previous page
 
 ### pageSwitch(page)
 go page specify by `page` argument
+
+## QQ交流群：210661226

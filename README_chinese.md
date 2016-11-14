@@ -1,6 +1,5 @@
 # javascript-data-model
 一个可以在前端轻松对DOM数据操作(基于MVVM，Angular/Vue)，包括增删改查，分页，过滤等，用于更方便实现无刷新更新DOM。希望能为大家节省一点时间。
-## QQ交流群：210661226
 
 ## 有什么作用？
 - **查找数据** 有时候，我们需要获取一些数据，但是这些数据已经在列表之中了。传统方式需要重新请求服务器查询这些数据库。使用此插件，你可以很轻松直接在前端查询出来，例子，查找所有女性用户`userModel.select({sex:'female'})`;
@@ -122,3 +121,5 @@ find data that match `condition` from `all` property,and put it to `current` pro
 
 ### pageSwitch(page)
 跳转到指定页面
+
+## QQ交流群：210661226
