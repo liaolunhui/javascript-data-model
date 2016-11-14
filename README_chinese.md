@@ -1,11 +1,11 @@
 # javascript-data-model
-一个可以在前端轻松对DOM数据操作(基于MVVM，Angular/Vue)，包括增删改查，分页，过滤等，用于更方便实现无刷新更新DOM。希望能为大家节省一点时间。
+一个可以在前端轻松对DOM数据操作(基于MVVM，Angular/Vue)，包括增删改查，分页，筛选等，用于更方便实现无刷新更新DOM。希望能为大家节省一点时间。
 
 ## 有什么作用？
 - **查找数据** 有时候，我们需要获取一些数据，但是这些数据已经在列表之中了。传统方式需要重新请求服务器查询这些数据库。使用此插件，你可以很轻松直接在前端查询出来，例子，查找所有女性用户`userModel.select({sex:'female'})`;
 - **更新数据与DOM** 我们经常需要对数据增加/修改/删除，请求服务器操作成功后，我们前端也需要更新。此时有两种方法，一种是页面刷新，一种是更新DOM。`javascript-data-model.js`能帮助你更方便实现无刷新更新DOM。
-- **分页**  有时候，我们需要对数据进行分页，此时可以一次性读出几页数据或全部数据，使用`userModel.enablePage()`分页，`userModel.nextPage()`或`userModel.prevPage()`进行分页，减少服务器请求，增强用户体验。
-- **过滤数据** 有时候，我们需要筛选一个列表中的数据。比如一个用户列表，我需要筛选性别为`女`的显示，就可以很简单使用`userModel.filter({sex:'female'})`实现。
+- **分页**  有时候，我们需要对数据进行分页，此时可以一次性读出几页数据或全部数据，使用`userModel.enablePage()`分页，`userModel.nextPage()`上一页或`userModel.prevPage()`下一页，减少服务器请求，增强用户体验。
+- **筛选数据** 我们经常需要筛选数据，比如“我的订单”页面，需要筛选“全部”/“未付款”/“已付款”。例子：筛选未付款的订单，`userModel.filter({payStatus:'unpay'})`。
 - **实时更新数据（即将开放）** 如果有一个`订单管理`功能，传统方式需要经常刷新或轮询来查看是否有新的订单。使用此插件，服务器收到新的订单，可以直接操作前端的数据模型，来实现实时更新数据。
 
 ## 和`Vue`的`数组扩展方法`有啥区别？
@@ -49,9 +49,9 @@ $scope.list=dataModel.current;
 ## 属性
 ### all
 
-模型中所有的数据,包括过滤掉的数据.
+模型中所有的数据,包括筛选掉的数据.
 ### current
-当前数据，不包括过滤掉的数据.
+当前数据，不包括筛选掉的数据.
 current data ,doesn't contain filter out data.
 
 ## 方法
@@ -105,7 +105,7 @@ var matchData=dataModel.select({type:'init'})
 ### filter(condition,orCondition,onlyCurrent)
 
 find data that match `condition` from `all` property,and put it to `current` property
-过滤数据，从`all`中查找符合`condition`条件的数据，并且放到`current`属性中，实现过滤。
+筛选数据，从`all`中查找符合`condition`条件的数据，并且放到`current`属性中，实现筛选。
 
 ### reset(arr)
 重置`all`里面的数据，并且重新生成`current`（根据之前的filter条件，如果有）
